@@ -1,0 +1,50 @@
+{
+    "name": "wilber/wilber-migrations",
+    "description": "A shared collection of migrations that are used for Claim Submission Portal and Data Entry",
+    "keywords": [
+        "wilber",
+        "wilber-migrations"
+    ],
+    "homepage": "https://github.com/wilbergroup/wilber-migrations",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jacob Bennett",
+            "email": "jbennett@wilbergroup.com",
+            "homepage": "https://wilbergroup.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Skeleton\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Skeleton\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wilber\\WilberMigrations\\WilberMigrationsServiceProvider"
+            ]
+        }
+    }
+}
