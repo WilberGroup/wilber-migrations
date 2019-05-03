@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Wilber\WilberMigrations\Tests;
 
 use PHPUnit\Framework\TestCase;
 
