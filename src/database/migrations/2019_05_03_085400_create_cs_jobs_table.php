@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateCSJobsTable extends Migration
+class CreateCsJobsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +15,12 @@ class CreateCSJobsTable extends Migration
     {
         Schema::create('cs_jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('queue');
+            $table->string('queue')->index();
             $table->longText('payload');
-            $table->tinyInteger('attempts')->unsigned();
-            $table->tinyInteger('reserved')->unsigned();
+            $table->unsignedTinyInteger('attempts');
             $table->unsignedInteger('reserved_at')->nullable();
             $table->unsignedInteger('available_at');
             $table->unsignedInteger('created_at');
-            $table->index(['queue', 'reserved', 'reserved_at']);
         });
     }
 
@@ -32,6 +31,6 @@ class CreateCSJobsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cs_jobs');
+        Schema::dropIfExists('cs_jobs');
     }
 }
