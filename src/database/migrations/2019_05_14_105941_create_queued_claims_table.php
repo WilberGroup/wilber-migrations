@@ -16,7 +16,7 @@ class CreateQueuedClaimsTable extends Migration
         Schema::create('queued_claims', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('creator_user_id');
-            $table->unsignedInteger('completer_user_id');
+            $table->unsignedInteger('completer_user_id')->nullable();
             $table->string('client_code');
             $table->string('claim_number');
             $table->timestamp('claimed_at')->nullable();
