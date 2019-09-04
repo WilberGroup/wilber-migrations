@@ -26,12 +26,11 @@ class CreateClaimsArchiveTable extends Migration
             $table->boolean('docsUploaded')->default(0);
             $table->integer('time_in_claim')->nullable();
             $table->date('flip_placement_at')->nullable();
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->dateTime('completed_at')->nullable();
             $table->dateTime('exportDate');
             $table->dateTime('redacted_at');
-            $table->timestamp('archived_at');
+            $table->dateTime('archived_at');
         });
     }
 
