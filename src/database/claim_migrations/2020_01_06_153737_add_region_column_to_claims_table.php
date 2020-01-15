@@ -9,7 +9,7 @@ class AddRegionColumnToClaimsTable extends Migration
     public function up()
     {
         Schema::table('claims', function ($table) {
-            $table->string('region')->after('debtorType')->nullable();
+            $table->text('region')->after('debtorType')->nullable();
         });
     }
 
